@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SKILLSHARE</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="jaideep.css">
+</head>
+<body>
+
+     <!-- Navigation -->
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+        
+            <a class="navbar-brand" href="#">SKILLSHARE</a>
+            <img src="asetts/OIP.jpeg" class="img-thumbnail" alt="Campus View" <i class="fa fa-align-center" aria-hidden="true"></i>>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <!-- <li class="nav-item"><a class="nav-link" href="#faculty">Faculty</a></li> -->
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#courses">Courses</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#assessments">Assessments</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact </a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+   <!-- Campus Image Slideshow -->
+<section id="campus-slideshow" class="container my-5">
+    <h2 class="text-primary text-center mb-4">Explore Our Campus</h2>
+    <div id="campusCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="1000">
+        <!-- Carousel Indicators -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#campusCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#campusCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#campusCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#campusCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        </div>
+
+        <!-- Carousel Images -->
+        <div class="carousel-inner">
+            <!-- Slide 1 -->
+            <div class="carousel-item active">
+                <img src="https://media.istockphoto.com/id/1331682203/photo/office-park.jpg?s=612x612&w=0&k=20&c=qte_go0GenpfC-fMJ-LNOHln5Yuj1RAMXlhGfoeBFOY=" class="d-block w-100" alt="Campus View 1">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>State-of-the-Art Campus</h5>
+                    <p>Modern infrastructure and facilities for students.</p>
+                </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="carousel-item">
+                <img src="https://media.istockphoto.com/id/1349302572/photo/happy-group-of-graduate-students-in-a-row-holding-their-diplomas.jpg?s=612x612&w=0&k=20&c=iowe7MlEZ0FVHIPsd7RNqrMQXNxTLt5yJ6zcu4Y06pY=" class="d-block w-100" alt="Campus View 2">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Extensive Library</h5>
+                    <p>Access to a vast collection of books and research materials.</p>
+                </div>
+            </div>
+             <!-- Slide 3 -->
+             <div class="carousel-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnJ3RkGZU8PpLmhRoeZOWtpqCD1GXA_c89xA&s" class="d-block w-100" alt="Campus View 2">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Extensive Library</h5>
+                    <p>Access to a vast collection of books and research materials.</p>
+                </div>
+            </div>
+            <!-- Slide 4 -->
+            <div class="carousel-item">
+                <img src="https://alterline.co.uk/wp-content/uploads/2018/09/shutterstock_408849511-e1580982526798.jpg" class="d-block w-100" alt="Campus View 3">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Vibrant Student Life</h5>
+                    <p>Opportunities for socializing, learning, and growing.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Carousel Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#campusCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#campusCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</section>
+<!-- Quiz Button Section -->
+<section class="text-center my-5">
+    <button onclick="startQuiz()" class="btn btn-success btn-lg">Start Quiz</button>
+</section>
+
+<!-- Quiz Content Section (Initially Hidden) -->
+<section id="quiz-section" class="container text-center my-5" style="display: none;">
+    <h2>Quiz on Computer Languages</h2>
+    <p>Answer the following questions:</p>
+    <form id="quiz-form">
+        <!-- Question 1 -->
+        <div>
+            <p>1. Which language is known as the backbone of the web?</p>
+            <input type="radio" name="q1" value="html"> HTML<br>
+            <input type="radio" name="q1" value="css"> CSS<br>
+            <input type="radio" name="q1" value="js"> JavaScript<br>
+        </div>
+        <!-- Question 2 -->
+        <div>
+            <p>2. Which language is primarily used for Android app development?</p>
+            <input type="radio" name="q2" value="java"> Java<br>
+            <input type="radio" name="q2" value="python"> Python<br>
+            <input type="radio" name="q2" value="swift"> Swift<br>
+        </div>
+        <!-- Additional Questions -->
+<!-- Question 3 -->
+<div>
+    <p>3. Which language is known for its use in data science and machine learning?</p>
+    <input type="radio" name="q3" value="r"> R<br>
+    <input type="radio" name="q3" value="python"> Python<br>
+    <input type="radio" name="q3" value="sql"> SQL<br>
+</div>
+<!-- Question 4 -->
+<div>
+    <p>4. Which programming language is widely used for iOS development?</p>
+    <input type="radio" name="q4" value="swift"> Swift<br>
+    <input type="radio" name="q4" value="kotlin"> Kotlin<br>
+    <input type="radio" name="q4" value="csharp"> C#<br>
+</div>
+<!-- Question 5 -->
+<div>
+    <p>5. Which language is best known for web frameworks like Django and Flask?</p>
+    <input type="radio" name="q5" value="php"> PHP<br>
+    <input type="radio" name="q5" value="python"> Python<br>
+    <input type="radio" name="q5" value="ruby"> Ruby<br>
+</div>
+<!-- Question 6 -->
+<div>
+    <p>6. Which programming language was created by Google and is often used in web and cloud applications?</p>
+    <input type="radio" name="q6" value="go"> Go<br>
+    <input type="radio" name="q6" value="rust"> Rust<br>
+    <input type="radio" name="q6" value="perl"> Perl<br>
+</div>
+<!-- Question 7 -->
+<div>
+    <p>7. Which programming language is primarily known for its role in artificial intelligence development?</p>
+    <input type="radio" name="q7" value="lisp"> Lisp<br>
+    <input type="radio" name="q7" value="prolog"> Prolog<br>
+    <input type="radio" name="q7" value="c"> C<br>
+</div>
+
+        <!-- Add More Questions Here -->
+        <button type="button" onclick="submitQuiz()" class="btn btn-primary mt-3">Submit</button>
+    </form>
+</section>
+
+<!-- Results Section (Initially Hidden) -->
+<section id="result-section" class="container text-center my-5" style="display: none;">
+    <h2>Quiz Results</h2>
+    <p id="score"></p>
+    <table class="table table-bordered mt-3">
+        <thead>
+            <tr>
+                <th>Question</th>
+                <th>Your Answer</th>
+                <th>Correct Answer</th>
+                <th>Score</th>
+            </tr>
+        </thead>
+        <tbody id="results-table">
+            <!-- Results will be dynamically populated here -->
+        </tbody>
+    </table>
+</section>
+
+<script>
+    function startQuiz() {
+        document.getElementById("quiz-section").style.display = "block";
+        document.getElementById("result-section").style.display = "none";
+    }
+
+    function submitQuiz() {
+        const answers = {
+    q1: "html",
+    q2: "java",
+    q3: "python",
+    q4: "swift",
+    q5: "python",
+    q6: "go",
+    q7: "lisp"
+            
+        };
+        
+        const form = document.getElementById("quiz-form");
+        let score = 0;
+        let totalQuestions = Object.keys(answers).length;
+        let resultsHTML = "";
+
+        for (let question in answers) {
+            let selected = form[question].value;
+            let isCorrect = selected === answers[question];
+            
+            if (isCorrect) score += 1;
+
+            resultsHTML += `<tr>
+                <td>${question.toUpperCase()}</td>
+                <td>${selected || "No answer"}</td>
+                <td>${answers[question]}</td>
+                <td>${isCorrect ? 1 : 0}</td>
+            </tr>`;
+        }
+
+        document.getElementById("score").textContent = `You scored ${score} out of ${totalQuestions}`;
+        document.getElementById("results-table").innerHTML = resultsHTML;
+
+        document.getElementById("quiz-section").style.display = "none";
+        document.getElementById("result-section").style.display = "block";
+    }
+</script>
+
+
+
+    <!-- Header -->
+    <header class="text-white text-center d-flex align-items-center justify-content-center" style="background-image: url('https://source.unsplash.com/1600x900/?college,university'); height: 60vh; background-size: cover;">
+        <div class="bg-dark p-4 rounded shadow" style="background: rgba(0, 0, 0, 0.6);">
+            <h1 class="display-4">Welcome to SKILLSHARE</h1>
+            <p class="lead">Your Pathway to Excellence</p>
+   <a href="login.html" class="btn btn-success btn-lg mt-3">log in Now</a>
+
+        </div>
+    </header>
+
+   
+
+    <!-- Main Content -->
+    <main class="container my-5">
+        <!-- About Section -->
+        <section id="about" class="mb-5 text-center">
+            <h2 class="text-primary mb-3">About Our lms </h2>
+            <p>SKILLSHARE INSTITUTE is committed to providing an environment of academic excellence. We offer programs in various disciplines, fostering growth and leadership in all our students.</p>
+        </section>
+
+        <!-- Courses Section -->
+        <section id="courses" class="mb-5 text-center">
+            <h2 class="text-primary mb-3">Our Courses</h2>
+            <div class="row g-3">
+                <div class="col-md-3">
+                    <div class="card h-100 shadow">
+                        <div class="card-body">
+                            <a href="https://www.javatpoint.com/html-tutorial" target="_blank" class="btn btn-primary w-100 mt-2">HTML</a>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100 shadow">
+                        <div class="card-body">
+                            <a href="https://www.javatpoint.com/c-sharp-tutorial" target="_blank" class="btn btn-primary w-100 mt-2">C#</a>
+                        
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100 shadow">
+                        <div class="card-body">
+                            <a href="https://www.javatpoint.com/javascript-tutorial" target="_blank" class="btn btn-primary w-100 mt-2">JavaScript</a>
+                    
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100 shadow">
+                        <div class="card-body">
+                            <a href="https://www.bing.com/ck/a?!&&p=014845df5854db5dJmltdHM9MTczMDE2MDAwMCZpZ3VpZD0xNmZmNWIxNy0wNTMzLTZhMTAtMDMxNC00OTI5MDQ5NTZiMjEmaW5zaWQ9NTI4NA&ptn=3&ver=2&hsh=3&fclid=16ff5b17-0533-6a10-0314-492904956b21&psq=devops&u=a1aHR0cHM6Ly93d3cuamF2YXRwb2ludC5jb20vZGV2b3Bz&ntb=1" target="_blank" class="btn btn-primary w-100 mt-2">DEVOPS</a>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100 shadow">
+                        <div class="card-body">
+                            <a href="https://www.bing.com/ck/a?!&&p=5d9b960752af5bdaJmltdHM9MTczMDE2MDAwMCZpZ3VpZD0xNmZmNWIxNy0wNTMzLTZhMTAtMDMxNC00OTI5MDQ5NTZiMjEmaW5zaWQ9NTI1NQ&ptn=3&ver=2&hsh=3&fclid=16ff5b17-0533-6a10-0314-492904956b21&psq=cyber+security&u=a1aHR0cHM6Ly93d3cuaWJtLmNvbS90b3BpY3MvY3liZXJzZWN1cml0eQ&ntb=1" target="_blank" class="btn btn-primary w-100 mt-2">CYBERSECURITY</a>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100 shadow">
+                        <div class="card-body">
+                            <a href="https://www.bing.com/ck/a?!&&p=c2da1bd2985a7482JmltdHM9MTczMDE2MDAwMCZpZ3VpZD0xNmZmNWIxNy0wNTMzLTZhMTAtMDMxNC00OTI5MDQ5NTZiMjEmaW5zaWQ9NTIyMw&ptn=3&ver=2&hsh=3&fclid=16ff5b17-0533-6a10-0314-492904956b21&psq=artificial+intelligence+and+machine+learning&u=a1aHR0cHM6Ly93d3cuZ2Vla3Nmb3JnZWVrcy5vcmcvbWFjaGluZS1sZWFybmluZy12ZXJzdXMtYXJ0aWZpY2lhbC1pbnRlbGxpZ2VuY2Uv&ntb=1" target="_blank" class="btn btn-primary w-100 mt-2">AIML</a>
+                        
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100 shadow">
+                        <div class="card-body">
+                            <a href="https://www.bing.com/ck/a?!&&p=f9603f56b687442fJmltdHM9MTczMDE2MDAwMCZpZ3VpZD0xNmZmNWIxNy0wNTMzLTZhMTAtMDMxNC00OTI5MDQ5NTZiMjEmaW5zaWQ9NTIyMA&ptn=3&ver=2&hsh=3&fclid=16ff5b17-0533-6a10-0314-492904956b21&psq=artificial+intelligence+and+data+science&u=a1aHR0cHM6Ly90YXJnZXRzdHVkeS5jb20vY291cnNlcy9idGVjaC1hcnRpZmljaWFsLWludGVsbGlnZW5jZS1hbmQtZGF0YS1zY2llbmNlLmh0bWw&ntb=1" target="_blank" class="btn btn-primary w-100 mt-2">AIDS</a>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100 shadow">
+                        <div class="card-body">
+                            <a href="https://www.bing.com/ck/a?!&&p=c840f17f68a79da1JmltdHM9MTczMDE2MDAwMCZpZ3VpZD0xNmZmNWIxNy0wNTMzLTZhMTAtMDMxNC00OTI5MDQ5NTZiMjEmaW5zaWQ9NTI2MA&ptn=3&ver=2&hsh=3&fclid=16ff5b17-0533-6a10-0314-492904956b21&psq=sql&u=a1aHR0cHM6Ly93d3cuZ2Vla3Nmb3JnZWVrcy5vcmcvc3FsLXR1dG9yaWFsLw&ntb=1" target="_blank" class="btn btn-primary w-100 mt-2">SQL</a>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100 shadow">
+                        <div class="card-body">
+                            <a href="https://www.bing.com/ck/a?!&&p=584bf9b84f3d99eeJmltdHM9MTczMDE2MDAwMCZpZ3VpZD0xNmZmNWIxNy0wNTMzLTZhMTAtMDMxNC00OTI5MDQ5NTZiMjEmaW5zaWQ9NTQ0Mg&ptn=3&ver=2&hsh=3&fclid=16ff5b17-0533-6a10-0314-492904956b21&psq=django&u=a1aHR0cHM6Ly93d3cuZ2Vla3Nmb3JnZWVrcy5vcmcvZGphbmdvLXR1dG9yaWFsLw&ntb=1" target="_blank" class="btn btn-primary w-100 mt-2">DJANGO</a>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100 shadow">
+                        <div class="card-body">
+                            <a href="https://www.bing.com/ck/a?!&&p=e32ede5c01b150ceJmltdHM9MTczMDE2MDAwMCZpZ3VpZD0xNmZmNWIxNy0wNTMzLTZhMTAtMDMxNC00OTI5MDQ5NTZiMjEmaW5zaWQ9NTQyOQ&ptn=3&ver=2&hsh=3&fclid=16ff5b17-0533-6a10-0314-492904956b21&psq=numpy&u=a1aHR0cHM6Ly93d3cuZ2Vla3Nmb3JnZWVrcy5vcmcvbnVtcHktdHV0b3JpYWwv&ntb=1" target="_blank" class="btn btn-primary w-100 mt-2">NUMPY</a>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100 shadow">
+                        <div class="card-body">
+                            <a href="https://www.bing.com/ck/a?!&&p=895919a47aad6c29JmltdHM9MTczMDE2MDAwMCZpZ3VpZD0xNmZmNWIxNy0wNTMzLTZhMTAtMDMxNC00OTI5MDQ5NTZiMjEmaW5zaWQ9NTY4NA&ptn=3&ver=2&hsh=3&fclid=16ff5b17-0533-6a10-0314-492904956b21&psq=node-js&u=a1aHR0cHM6Ly9ub2RlanMub3JnLw&ntb=1l" target="_blank" class="btn btn-primary w-100 mt-2">NODE-JS</a>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100 shadow">
+                        <div class="card-body">
+                            <a href="https://www.bing.com/ck/a?!&&p=fd39f48dd6eea7c5JmltdHM9MTczMDE2MDAwMCZpZ3VpZD0xNmZmNWIxNy0wNTMzLTZhMTAtMDMxNC00OTI5MDQ5NTZiMjEmaW5zaWQ9NTIxOA&ptn=3&ver=2&hsh=3&fclid=16ff5b17-0533-6a10-0314-492904956b21&psq=r&u=a1aHR0cHM6Ly93d3cuci1wcm9qZWN0Lm9yZy8&ntb=1" target="_blank" class="btn btn-primary w-100 mt-2">R</a>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100 shadow">
+                        <div class="card-body">
+                            <a href="https://www.bing.com/ck/a?!&&p=f981720a1d94c282JmltdHM9MTczMDE2MDAwMCZpZ3VpZD0xNmZmNWIxNy0wNTMzLTZhMTAtMDMxNC00OTI5MDQ5NTZiMjEmaW5zaWQ9NTIyNA&ptn=3&ver=2&hsh=3&fclid=16ff5b17-0533-6a10-0314-492904956b21&psq=kotlin&u=a1aHR0cHM6Ly9rb3RsaW5sYW5nLm9yZy8&ntb=1" target="_blank" class="btn btn-primary w-100 mt-2">KOTLIN</a>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100 shadow">
+                        <div class="card-body">
+                            <a href="https://www.javatpoint.com/c-programming-language-tutorial" target="_blank" class="btn btn-primary w-100 mt-2">C</a>
+                    
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100 shadow">
+                        <div class="card-body">
+                            <a href="https://www.javatpoint.com/cpp-tutorial" target="_blank" class="btn btn-primary w-100 mt-2">C++</a>
+                        
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100 shadow">
+                        <div class="card-body">
+                            <a href="https://www.javatpoint.com/java-tutorial" target="_blank" class="btn btn-primary w-100 mt-2">JAVA FULLSTACK</a>
+    
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100 shadow">
+                        <div class="card-body">
+                            <a href="https://www.javatpoint.com/python-tutorial" target="_blank" class="btn btn-primary w-100 mt-2">PYTHON</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100 shadow">
+                        <div class="card-body">
+                            <a href="https://www.javatpoint.com/dbms-tutorial" target="_blank" class="btn btn-primary w-100 mt-2">DBMS</a>
+                          
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100 shadow">
+                        <div class="card-body">
+                            <a href="https://www.bing.com/ck/a?!&&p=0ff21f2bce69e54cJmltdHM9MTczMDE2MDAwMCZpZ3VpZD0xNmZmNWIxNy0wNTMzLTZhMTAtMDMxNC00OTI5MDQ5NTZiMjEmaW5zaWQ9NTI3Nw&ptn=3&ver=2&hsh=3&fclid=16ff5b17-0533-6a10-0314-492904956b21&psq=cloud+computing&u=a1aHR0cHM6Ly9jbG91ZC5nb29nbGUuY29tL2xlYXJuL3doYXQtaXMtY2xvdWQtY29tcHV0aW5n&ntb=1" target="_blank" class="btn btn-primary w-100 mt-2">cloud computing</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+  <!-- Admissions Section -->
+<section id="admissions" class="text-center my-5 admissions-background">
+    <h2 class="text-primary mb-3">Admissions</h2>
+    <p>Join TERABYTE INSTITUTE and begin your journey towards a brighter future. Our admissions process is designed to make it easy for you to join our community.</p>
+    <button type="button" class="btn btn-success btn-lg" data-bs-toggle="modal" data-bs-target="#applyNowModal">Apply Now</button>
+</section>
+
+<!-- Modal Structure for Application Form -->
+<div class="modal fade" id="applyNowModal" tabindex="-1" aria-labelledby="applyNowLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="applyNowLabel">Student Application Form</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="applyForm">
+                    <div class="mb-3">
+                        <label for="studentName" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="studentName" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="studentAge" class="form-label">Age</label>
+                        <input type="number" class="form-control" id="studentAge" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="studentGender" class="form-label">Gender</label>
+                        <select class="form-control" id="studentGender" required>
+                            <option value="">Select Gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="studentDob" class="form-label">Date of Birth</label>
+                        <input type="date" class="form-control" id="studentDob" required>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="submitApplication()">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function submitApplication() {
+        // Collect form data
+        const name = document.getElementById("studentName").value;
+        const age = document.getElementById("studentAge").value;
+        const gender = document.getElementById("studentGender").value;
+        const dob = document.getElementById("studentDob").value;
+
+        // Check if all fields are filled
+        if (name && age && gender && dob) {
+            console.log("Application Submitted:");
+            console.log("Name:", name);
+            console.log("Age:", age);
+            console.log("Gender:", gender);
+            console.log("Date of Birth:", dob);
+
+            // Clear the form
+            document.getElementById("applyForm").reset();
+
+            // Close the modal
+            const modal = bootstrap.Modal.getInstance(document.getElementById('applyNowModal'));
+            modal.hide();
+
+            alert("Application submitted successfully!");
+        } else {
+            alert("Please fill in all fields.");
+        }
+    }
+</script>
+
+    </main>
+    
+</section>
+
+<!-- Placements Section -->
+<section id="placements" class="container text-center my-5">
+    <h2 class="text-primary mb-3">Our Placement Partners</h2>
+    <p>Our students have been placed in renowned companies globally.</p>
+    <div class="row g-4 mt-4">
+        <!-- Company 1 -->
+        <div class="col-md-3">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAZPZofzMEYzP938SNvkFKrIC7JddJez3A2g&s" class="img-fluid rounded-circle" alt="TCS Logo">
+            <a href="https://www.tcs.com" target="_blank" class="btn btn-primary w-100 mt-2">TCS</a>
+        </div>
+        <!-- Company 2 -->
+        <div class="col-md-3">
+            <img src="https://assets.channelinsider.com/uploads/2022/04/CI.Infosys.Profile.png" class="img-fluid rounded-circle" alt="Infosys Logo">
+            <a href="https://www.infosys.com" target="_blank" class="btn btn-primary w-100 mt-2">Infosys</a>
+        </div>
+        <!-- Company 3 -->
+        <div class="col-md-3">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvcDD8PQ_Xi2oz6VKIxfp37D65KU7LVXW_1A&s" class="img-fluid rounded-circle" alt="Wipro Logo">
+            <a href="https://www.wipro.com" target="_blank" class="btn btn-primary w-100 mt-2">Wipro</a>
+        </div>
+        <!-- Company 4 -->
+        <div class="col-md-3">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROfD1hYpqvU3mLLc4BCpwn3zfKAUiwypS8UQ&s" class="img-fluid rounded-circle" alt="IBM Logo">
+            <a href="https://www.ibm.com" target="_blank" class="btn btn-primary w-100 mt-2">IBM</a>
+        </div>
+    </div>
+    <div class="row g-4 mt-4">
+        <!-- Additional companies can be added in similar rows -->
+        <div class="col-md-3">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRg-qUQP0XEGZ2xkmVpeELgomNoUFaD7uyxQ&s" class="img-fluid rounded-circle" alt="Accenture Logo">
+            <a href="https://www.accenture.com" target="_blank" class="btn btn-primary w-100 mt-2">Accenture</a>
+        </div>
+        <div class="col-md-3">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGYiDiJMGLsDuWcjJB23fSMrWpzaxJItqdsQ&s" class="img-fluid rounded-circle" alt="Capgemini Logo">
+            <a href="https://www.capgemini.com" target="_blank" class="btn btn-primary w-100 mt-2">Capgemini</a>
+        </div>
+        <div class="col-md-3">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVRdPHyiyKHiX4LTTmypkMEgIrZKhTdRzmGA&s" class="img-fluid rounded-circle" alt="Cognizant Logo">
+            <a href="https://www.cognizant.com" target="_blank" class="btn btn-primary w-100 mt-2">Cognizant</a>
+        </div>
+        <div class="col-md-3">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuvdaj9UlFNC_1V4ZmQpAxx1yZL2WYG9lntg&s" class="img-fluid rounded-circle" alt="HCL Logo">
+            <a href="https://www.hcltech.com" target="_blank" class="btn btn-primary w-100 mt-2">HCL</a>
+        </div>
+    </div>
+</section>
+<section id="placement-graph" class="container text-center my-5">
+    <h2 class="text-primary mb-3">Student Placement Qualification Percentage</h2>
+    <canvas id="qualificationChart" width="750" height="550"></canvas>
+</section>
+
+<style>
+    /* CSS for the canvas to ensure it stays centered and has a maximum size */
+    #qualificationChart {
+        max-width: 400px; /* Set a smaller max width */
+        margin: 0 auto; /* Center the chart */
+    }
+</style>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const ctx = document.getElementById('qualificationChart').getContext('2d');
+        const qualificationChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['2020', '2021', '2022', '2023', '2024','2025'], // Example years or semesters
+                datasets: [{
+                    label: 'Percentage of Students Qualifying for Placements',
+                    data: [40, 55, 60, 75, 80,90], // Example data (replace with actual percentages)
+                    fill: false,
+                    borderColor: 'rgba(995, 92, 92, 213)',
+                    tension: 0.14
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true, // Maintain the aspect ratio
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Year'
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Qualification Percentage (%)'
+                        },
+                        min: 0,
+                        max: 100
+                    }
+                },
+                plugins: {
+                    legend: {
+                        position: 'top'
+                    },
+                    tooltip: {
+                        enabled: true
+                    }
+                }
+            }
+        });
+    });
+</script>
+
+<!-- Students Pass Marks Section -->
+ <style>
+ #pass-marks-chart {
+    max-width: 500px; /* Set a maximum width for the chart container */
+    margin: auto; /* Center the chart on the page */
+}
+</style>
+<section id="pass-marks-chart" class="container text-center my-5">
+    <h2 class="text-primary mb-3">Students' Pass Marks</h2>
+    <canvas id="passMarksChart" width="300" height="250"></canvas>
+</section>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const ctx = document.getElementById('passMarksChart').getContext('2d');
+        const passMarksChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Student A', 'Student B', 'Student C', 'Student D', 'Student E'], // Replace with actual student names or IDs
+                datasets: [{
+                    label: 'Pass Marks (%)',
+                    data: [70, 85, 60, 90, 75], // Replace with actual pass marks
+                    backgroundColor: 'rgba(265, 165, 0, 0.7)', // Orange color with transparency
+                    borderColor: 'rgba(255, 0, 0, 1)', // Solid red border
+
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Students'
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Marks (%)'
+                        },
+                        min: 0,
+                        max: 100
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'top'
+                    },
+                    tooltip: {
+                        enabled: true
+                    }
+                }
+            }
+        });
+    });
+</script>
+
+
+<!-- Assessments Section -->
+<section id="assessments" class="container text-center my-5">
+    <h2 class="text-primary mb-3">Student Assessments</h2>
+    <p>Below are the different assessments that students must complete as part of the qualification process:</p>
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>Assessment Name</th>
+                    <th>Description</th>
+                    <th>Weight (%)</th>
+                    <th>Score Range</th>
+                    <th>Passing Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Technical Test</td>
+                    <td>An assessment focused on technical skills relevant to the field.</td>
+                    <td>40%</td>
+                    <td>0 - 100</td>
+                    <td>60%</td>
+                </tr>
+                <tr>
+                    <td>Soft Skills Evaluation</td>
+                    <td>Evaluates communication, teamwork, and problem-solving skills.</td>
+                    <td>20%</td>
+                    <td>0 - 100</td>
+                    <td>70%</td>
+                </tr>
+                <tr>
+                    <td>Mock Interview</td>
+                    <td>A simulated interview to prepare for real placement scenarios.</td>
+                    <td>15%</td>
+                    <td>0 - 100</td>
+                    <td>65%</td>
+                </tr>
+                <tr>
+                    <td>Project Presentation</td>
+                    <td>Students present their projects to a panel for evaluation.</td>
+                    <td>25%</td>
+                    <td>0 - 100</td>
+                    <td>75%</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<style>
+    /* Styling for Assessments Section */
+    #assessments {
+        margin-top: 40px;
+    }
+    #assessments h2 {
+        font-size: 1.8em;
+        color: #007bff; /* Bootstrap primary color */
+    }
+    #assessments .table {
+        margin-top: 20px;
+        text-align: center;
+    }
+    #assessments .table th, #assessments .table td {
+        vertical-align: middle;
+    }
+    #assessments .table-hover tbody tr:hover {
+        background-color: #f5f5f5;
+    }
+</style>
+
+<!-- Top Placement Holders Section -->
+<section id="top-placement-holders" class="container text-center my-5">
+    <h2 class="text-primary mb-3">Top Placement Holders</h2>
+    <p>Meet our top-performing students who have secured prestigious positions in leading companies:</p>
+    <div class="row row-cols-1 row-cols-md-5 g-4 justify-content-center mt-4">
+        <!-- Placement Holder 1 -->
+        <div class="col">
+            <h6 class="mt-2">Krishnaveni</h6>
+            <p>Google</p>
+            <p>5CR-PA</p>
+        </div>
+        <!-- Placement Holder 2 -->
+        <div class="col">
+            <h6 class="mt-2">vineela Reddy</h6>
+            <p>Amazon</p>
+            <p>90-LPA</p>
+        </div>
+        <!-- Placement Holder 3 -->
+        <div class="col">
+            <h6 class="mt-2">Sambhavi Reddy</h6>
+            <p>Microsoft</p>
+            <p>40-LPA</p>
+        </div>
+        <!-- Placement Holder 4 -->
+        <div class="col">
+            <h6 class="mt-2">varshika</h6>
+            <p>Meta</p>
+            <p>55-LPA</p>
+        </div>
+        <!-- Placement Holder 5 -->
+        <div class="col">
+            <h6 class="mt-2">swarna</h6>
+            <p>Apple</p>
+            <p>1-cr</p>
+        </div>
+        
+    </div>
+</section>
+<!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p> Skillshare| Contact: +1 (555) 123-4567 | Email: info@skillshare.edu</p>
+        <p>&copy; Skillshare. All rights reserved.</p>
+    </footer>
+
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

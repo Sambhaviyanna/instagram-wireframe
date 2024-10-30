@@ -1,0 +1,81 @@
+.container{
+    height: 1000vh;
+    width: 100vw;
+    border: 2px solid deeppink;
+}
+.title{
+    height: 2%;
+    width: 40%;
+    border: 2px solid black;
+    position: relative;
+    top:70px;
+    left:500px;
+}
+.scroll-container {
+    height: 5%;
+    width: 90%;
+    border: 2px solid deeppink;
+    overflow-x: auto;
+    white-space: nowrap;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #fff;
+    position: relative;
+    top: 130px;
+    left: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.button-group {
+    height: 80%;
+    width: 92%;
+    border: 2px solid black;
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.scroll-button {
+    height: 70%;
+    width: 60%;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.scroll-button:hover {
+    background-color: #0056b3;
+}
+.start{
+    height: 15%;
+    width: 40%;
+    border: 2px solid black;
+    position: relative;
+    left: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:blueviolet;
+}
+.mid{
+    height:0.5%;
+    width: 50%;
+    border: 2px solid black;
+    position: relative;
+    left: 350px;
+    top: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
